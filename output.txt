@@ -1,0 +1,197 @@
+Mon Feb 10 21:26:07 PST 2020
+*** compiling with clang++ to create an executable called myprogram
+clang version 7.0.1 (tags/RELEASE_701/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/rh/llvm-toolset-7.0/root/usr/bin
+skiplist.cpp:13:51: warning: unused parameter 'skipList' [-Wunused-parameter]
+ostream& operator<<(ostream& out, const SkipList& skipList) { return out; }
+                                                  ^
+skiplist.cpp:15:28: warning: unused parameter 'data' [-Wunused-parameter]
+SkipList::SNode::SNode(int data) {}
+                           ^
+skiplist.cpp:17:24: warning: unused parameter 'depth' [-Wunused-parameter]
+SkipList::SkipList(int depth) {}
+                       ^
+skiplist.cpp:21:24: warning: unused parameter 'data' [-Wunused-parameter]
+bool SkipList::add(int data) { return true; }
+                       ^
+skiplist.cpp:23:33: warning: unused parameter 'newNode' [-Wunused-parameter]
+void SkipList::addBefore(SNode* newNode, SNode* nextNode) {}
+                                ^
+skiplist.cpp:23:49: warning: unused parameter 'nextNode' [-Wunused-parameter]
+void SkipList::addBefore(SNode* newNode, SNode* nextNode) {}
+                                                ^
+skiplist.cpp:29:27: warning: unused parameter 'data' [-Wunused-parameter]
+bool SkipList::remove(int data) { return false; }
+                          ^
+skiplist.cpp:31:29: warning: unused parameter 'data' [-Wunused-parameter]
+bool SkipList::contains(int data) { return false; }
+                            ^
+In file included from skiplist.cpp:9:
+./skiplist.h:63:9: warning: private field 'depth' is not used [-Wunused-private-field]
+    int depth;
+        ^
+./skiplist.h:66:13: warning: private field 'frontGuards' is not used [-Wunused-private-field]
+    SNode** frontGuards;
+            ^
+./skiplist.h:69:13: warning: private field 'rearGuards' is not used [-Wunused-private-field]
+    SNode** rearGuards;
+            ^
+11 warnings generated.
+*** running clang-tidy using options from .clang-tidy
+LLVM (http://llvm.org/):
+  LLVM version 7.0.1
+  Optimized build.
+  Default target: x86_64-unknown-linux-gnu
+  Host CPU: broadwell
+6817 warnings generated.
+13302 warnings generated.
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/main.cpp:19:7: warning: do not use 'else' after 'return' [readability-else-after-return]
+    } else {
+      ^~~~~~
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/main.cpp:34:5: warning: random number generator seeded with a constant value will generate a predictable sequence of values [cert-msc32-c]
+    srand(100);
+    ^
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.h:51:13: warning: invalid case style for public member 'data' [readability-identifier-naming]
+        int data;
+            ^~~~~
+            Data
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.h:53:16: warning: invalid case style for public member 'next' [readability-identifier-naming]
+        SNode* next;
+               ^~~~~
+               Next
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.h:55:16: warning: invalid case style for public member 'prev' [readability-identifier-naming]
+        SNode* prev;
+               ^~~~~
+               Prev
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.h:57:16: warning: invalid case style for public member 'upLevel' [readability-identifier-naming]
+        SNode* upLevel;
+               ^~~~~~~~
+               UpLevel
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.h:59:16: warning: invalid case style for public member 'downLevel' [readability-identifier-naming]
+        SNode* downLevel;
+               ^~~~~~~~~~
+               DownLevel
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.cpp:13:51: warning: parameter 'skipList' is unused [misc-unused-parameters]
+ostream& operator<<(ostream& out, const SkipList& skipList) { return out; }
+                                                  ^~~~~~~~~
+                                                   /*skipList*/
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.cpp:15:1: warning: constructor does not initialize these fields: data, next, prev, upLevel, downLevel [cppcoreguidelines-pro-type-member-init]
+SkipList::SNode::SNode(int data) {}
+^
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.cpp:17:1: warning: constructor does not initialize these fields: depth, frontGuards, rearGuards [cppcoreguidelines-pro-type-member-init]
+SkipList::SkipList(int depth) {}
+^
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.cpp:21:24: warning: parameter 'data' is unused [misc-unused-parameters]
+bool SkipList::add(int data) { return true; }
+                       ^~~~~
+                        /*data*/
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.cpp:25:11: warning: use '= default' to define a trivial destructor [hicpp-use-equals-default]
+SkipList::~SkipList() {
+          ^
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.cpp:29:27: warning: parameter 'data' is unused [misc-unused-parameters]
+bool SkipList::remove(int data) { return false; }
+                          ^~~~~
+                           /*data*/
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.cpp:31:29: warning: parameter 'data' is unused [misc-unused-parameters]
+bool SkipList::contains(int data) { return false; }
+                            ^~~~~
+                             /*data*/
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.h:51:13: warning: invalid case style for public member 'data' [readability-identifier-naming]
+        int data;
+            ^~~~~
+            Data
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.h:53:16: warning: invalid case style for public member 'next' [readability-identifier-naming]
+        SNode* next;
+               ^~~~~
+               Next
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.h:55:16: warning: invalid case style for public member 'prev' [readability-identifier-naming]
+        SNode* prev;
+               ^~~~~
+               Prev
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.h:57:16: warning: invalid case style for public member 'upLevel' [readability-identifier-naming]
+        SNode* upLevel;
+               ^~~~~~~~
+               UpLevel
+/home/NETID/jdelliot/repos/jdelliot342/skiplist/skiplist.h:59:16: warning: invalid case style for public member 'downLevel' [readability-identifier-naming]
+        SNode* downLevel;
+               ^~~~~~~~~~
+               DownLevel
+Suppressed 13279 warnings (13277 in non-user code, 2 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+*** running myprogram
+Because of the random nature of SkipList, the skip list levels may not match
+    Got   
+ expected Level: 0 -- -2147483648, 2147483647, 
+
+ERR: Empty SkipList
+    Got   
+ expected Level: 0 -- -2147483648, 5, 10, 25, 30, 2147483647, 
+
+ERR: Added 10, 30, 5, 25,
+    Got   
+ expected Level: 2 -- -2147483648, 2147483647, 
+Level: 1 -- -2147483648, 2147483647, 
+Level: 0 -- -2147483648, 2147483647, 
+
+ERR: Empty SkipList of Depth=3
+    Got   
+ expected Level: 2 -- -2147483648, 25, 2147483647, 
+Level: 1 -- -2147483648, 5, 10, 25, 30, 2147483647, 
+Level: 0 -- -2147483648, 5, 10, 25, 30, 2147483647, 
+
+ERR: SkipList of Depth=3 with 10, 30, 5, 25
+    Got   0
+ expected 1
+ERR: Contains 10
+    Got   0
+ expected 1
+ERR: Contains 30
+OK: Does not contain 71
+Passed: 1/7
+==4814== Memcheck, a memory error detector
+==4814== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4814== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==4814== Command: ./myprogram
+==4814== 
+Because of the random nature of SkipList, the skip list levels may not match
+    Got   
+ expected Level: 0 -- -2147483648, 2147483647, 
+
+ERR: Empty SkipList
+    Got   
+ expected Level: 0 -- -2147483648, 5, 10, 25, 30, 2147483647, 
+
+ERR: Added 10, 30, 5, 25,
+    Got   
+ expected Level: 2 -- -2147483648, 2147483647, 
+Level: 1 -- -2147483648, 2147483647, 
+Level: 0 -- -2147483648, 2147483647, 
+
+ERR: Empty SkipList of Depth=3
+    Got   
+ expected Level: 2 -- -2147483648, 25, 2147483647, 
+Level: 1 -- -2147483648, 5, 10, 25, 30, 2147483647, 
+Level: 0 -- -2147483648, 5, 10, 25, 30, 2147483647, 
+
+ERR: SkipList of Depth=3 with 10, 30, 5, 25
+    Got   0
+ expected 1
+ERR: Contains 10
+    Got   0
+ expected 1
+ERR: Contains 30
+OK: Does not contain 71
+Passed: 1/7
+==4814== 
+==4814== HEAP SUMMARY:
+==4814==     in use at exit: 0 bytes in 0 blocks
+==4814==   total heap usage: 11 allocs, 11 frees, 662 bytes allocated
+==4814== 
+==4814== All heap blocks were freed -- no leaks are possible
+==4814== 
+==4814== For counts of detected and suppressed errors, rerun with: -v
+==4814== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+*** cleaning up, deleting myprogram
+Mon Feb 10 21:26:17 PST 2020
